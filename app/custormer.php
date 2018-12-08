@@ -12,6 +12,7 @@ protected $fillable = [
     'custormer_sex',
     'custormer_number',
     'custormer_style',
-    'custormer_more'
+    'custormer_more',
+    'status_id'
 ];
 }

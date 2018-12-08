@@ -18,6 +18,7 @@ class CreateBarberTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('email');
+            $table->string('status_id');
             $table->timestamps();
         });
     }

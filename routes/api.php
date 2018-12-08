@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {});
 
 Route::resource('/barbers', BarbersController::class);
-Route::resource('/custormer',custormer ::class);
-Route::resource('/manu', manu::class);
-Route::resource('/registration', registration::class);
+Route::resource('/custormer',CustormerController ::class);
+Route::resource('/manu', ManuController::class);
+Route::resource('/registration', RegistrationController::class);
 

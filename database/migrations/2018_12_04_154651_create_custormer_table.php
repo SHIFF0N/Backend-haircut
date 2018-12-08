@@ -15,11 +15,14 @@ class CreateCustormerTable extends Migration
     {
         Schema::create('custormer', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('barber_id')->unsigned();
+            $table->foreign('barber_id')->references('id')->on('barber')->onUpdate('cascade');
             $table->string('custromer_name');
             $table->string('custromer_sex');
             $table->string('custromer_number');
             $table->string('custromer_style');
             $table->string('custromer_more');
+            $table->string('status_id');
             $table->timestamps();
         });
     }

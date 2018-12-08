@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Custormer;
 
 class CustormerController extends Controller
 {
@@ -13,7 +14,7 @@ class CustormerController extends Controller
      */
     public function index()
     {
-        //
+        return Custormer::get();
     }
 
     /**
@@ -34,10 +35,10 @@ class CustormerController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Product();
+        $data = new Custormer();
         $data->fill($request->all());
         $save = $data->save();
-        if($save) return'Customer';
+        if($save) return'customer';
     }
 
     /**
@@ -71,10 +72,10 @@ class CustormerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Product::find($id);
+        $data = Customer::find($id);
         $data->fill($request->all());
         $save = $data->save();
-        if($save) return 'update Customer';
+        if($save) return 'update customer';
     }
 
     /**
@@ -85,10 +86,10 @@ class CustormerController extends Controller
      */
     public function destroy($id)
     {
-        $data =  Product::find($id);
+        $data =  Customer::find($id);
         $data->status_id = 3 ;
         $save = $data->save();
-        if($save) return 'delete Customer';
+        if($save) return 'delete customer';
     }
 }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\barbers;
 
 class BarbersController extends Controller
 {
@@ -13,7 +14,7 @@ class BarbersController extends Controller
      */
     public function index()
     {
-        //
+       return barbers::get();
     }
 
     /**
@@ -34,8 +35,13 @@ class BarbersController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Product();
-        $data->fill($request->all());
+        $form = $request->all();
+        $form['password'] = base64_encode($form['password'] );
+
+        
+       
+        $data = new barbers();
+        $data->fill($form);
         $save = $data->save();
         if($save) return'barbers';
     }
@@ -48,7 +54,7 @@ class BarbersController extends Controller
      */
     public function show($id)
     {
-        //
+        return barbers::find($id);
     }
 
     /**
@@ -59,7 +65,7 @@ class BarbersController extends Controller
      */
     public function edit($id)
     {
-        //
+           
     }
 
     /**
@@ -71,7 +77,7 @@ class BarbersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Product::find($id);
+        $data = barbers::find($id);
         $data->fill($request->all());
         $save = $data->save();
         if($save) return 'update barbers';
@@ -85,7 +91,7 @@ class BarbersController extends Controller
      */
     public function destroy($id)
     {
-        $data =  Product::find($id);
+        $data =  barbers::find($id);
         $data->status_id = 3 ;
         $save = $data->save();
         if($save) return 'delete barbers';

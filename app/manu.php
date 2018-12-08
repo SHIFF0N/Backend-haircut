@@ -12,6 +12,7 @@ class manu extends Model
         'manu_timemale',
         'manu_timefemale',
         'manu_pricemale',
-        'manu_pricefemale'
+        'manu_pricefemale',
+        'status_id'
     ];
 }

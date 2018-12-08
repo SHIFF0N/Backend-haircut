@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Manu;
 
 class ManuController extends Controller
 {
@@ -13,7 +14,7 @@ class ManuController extends Controller
      */
     public function index()
     {
-        //
+        return Manu::get();
     }
 
     /**
@@ -34,7 +35,7 @@ class ManuController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Product();
+        $data = new Manu();
         $data->fill($request->all());
         $save = $data->save();
         if($save) return'Manu';
@@ -71,7 +72,7 @@ class ManuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Product::find($id);
+        $data = Manu::find($id);
         $data->fill($request->all());
         $save = $data->save();
         if($save) return 'update Manu';
@@ -85,7 +86,7 @@ class ManuController extends Controller
      */
     public function destroy($id)
     {
-        $data =  Product::find($id);
+        $data =  Manu::find($id);
         $data->status_id = 3 ;
         $save = $data->save();
         if($save) return 'delete Manu';

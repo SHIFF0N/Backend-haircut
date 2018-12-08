@@ -22,6 +22,7 @@ class CreateManuTable extends Migration
             $table->string('manu_timefemale');
             $table->string('manu_pricemale');
             $table->string('manu_pricefemale');
+            $table->string('status_id');
             $table->timestamps();
         });
     }

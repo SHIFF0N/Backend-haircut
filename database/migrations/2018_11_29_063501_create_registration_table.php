@@ -26,6 +26,7 @@ class CreateRegistrationTable extends Migration
             $table->string('registration_photo2');
             $table->string('registration_address');
             $table->string('registration_profile');
+            $table->string('status_id');
             $table->timestamps();
 
         });

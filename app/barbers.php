@@ -11,7 +11,8 @@ class barbers extends Model
         'id',
         'username',
         'password',
-        'email'
+        'email',
+        'status_id'
     ];
 }
 

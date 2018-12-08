@@ -16,6 +16,8 @@ class registration extends Model
         'registration_photo1',
         'registration_photo2',
         'registration_address',
-        'registration_profile'
+        'registration_profile',
+        'status_id'
+        
     ];
 }
